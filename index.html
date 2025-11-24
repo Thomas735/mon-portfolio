@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio</title>
+    <style>
+        /* --- STYLE DE BASE (CSS) --- */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            color: #333;
+            background-color: #f4f4f9;
+        }
+        header {
+            background: #2c3e50;
+            color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        header h1 { margin: 0; }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #34495e;
+            padding: 1rem;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        nav a:hover { color: #3498db; }
+        
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            background: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        h2 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        
+        .project {
+            border-left: 4px solid #3498db;
+            background: #f9f9f9;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #2c3e50;
+            color: #fff;
+            margin-top: 40px;
+        }
+        
+        /* Bouton de contact */
+        .btn {
+            display: inline-block;
+            background: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .btn:hover { background: #2980b9; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>NIELLEN Thomas</h1>
+        <p>Développeur Web | Créatif | Passionné</p>
+    </header>
+
+    <nav>
+        <a href="#about">À propos</a>
+        <a href="#projects">Projets</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container">
+        
+        <section id="about">
+            <h2>À propos de moi</h2>
+            <p>Bonjour ! Je suis passionné par la technologie et la création numérique. J'apprends actuellement à coder et voici mon premier portfolio en ligne.</p>
+        </section>
+
+        <section id="projects">
+            <h2>Mes Projets</h2>
+            
+            <div class="project">
+                <h3>Projet 1 : Mon Portfolio</h3>
+                <p>Création d'un site web personnel responsive utilisant HTML et CSS hébergé sur GitHub.</p>
+            </div>
+
+            <div class="project">
+                <h3>Projet 2 : À venir</h3>
+                <p>Description de ton prochain projet ici (une calculatrice, un blog, etc.).</p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Me Contacter</h2>
+            <p>Tu peux me retrouver sur les réseaux ou m'envoyer un email.</p>
+            <a href="mailto:ton-email@exemple.com" class="btn">M'envoyer un email</a>
+            <br><br>
+            <p>Retrouvez-moi sur <a href="#">LinkedIn</a> ou <a href="#">GitHub</a>.</p>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Ton Prénom Nom. Hébergé sur GitHub Pages.</p>
+    </footer>
+
+</body>
+</html>
