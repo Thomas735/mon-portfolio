@@ -3,128 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Portfolio</title>
-    <style>
-        /* --- STYLE DE BASE (CSS) --- */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            color: #333;
-            background-color: #f4f4f9;
-        }
-        header {
-            background: #2c3e50;
-            color: #fff;
-            padding: 2rem 0;
-            text-align: center;
-        }
-        header h1 { margin: 0; }
-        nav {
-            display: flex;
-            justify-content: center;
-            background: #34495e;
-            padding: 1rem;
-        }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
-        nav a:hover { color: #3498db; }
-        
-        .container {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 0 20px;
-        }
-        
-        section {
-            background: #fff;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-        
-        h2 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
-        
-        .project {
-            border-left: 4px solid #3498db;
-            background: #f9f9f9;
-            padding: 15px;
-            margin-bottom: 15px;
-        }
-        
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #2c3e50;
-            color: #fff;
-            margin-top: 40px;
-        }
-        
-        /* Bouton de contact */
-        .btn {
-            display: inline-block;
-            background: #3498db;
-            color: #fff;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 10px;
-        }
-        .btn:hover { background: #2980b9; }
-    </style>
+    <title>ePortfolio - Thomas NIELLEN - ENSEEIHT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
     <header>
-        <h1>NIELLEN Thomas</h1>
-        <p>Développeur Web | Créatif | Passionné</p>
+        <div class="header-overlay"></div>
+        <div class="header-content">
+            <h1>Thomas Niellen<span class="dot">.</span></h1>
+            <p>Ingénieur N7 en devenir | Sciences du Numérique</p>
+        </div>
     </header>
 
     <nav>
-        <a href="#about">À propos</a>
-        <a href="#projects">Projets</a>
-        <a href="#contact">Contact</a>
+        <div class="nav-container">
+            <button class="nav-btn active" onclick="openTab(event, 'welcome')"><i class="fas fa-home"></i> Accueil</button>
+            <button class="nav-btn" onclick="openTab(event, 'engineering')"><i class="fas fa-code"></i> Ingénieur</button>
+            <button class="nav-btn" onclick="openTab(event, 'mobility')"><i class="fas fa-plane"></i> Mobilité</button>
+            <button class="nav-btn" onclick="openTab(event, 'civic')"><i class="fas fa-hand-holding-heart"></i> Engagement</button>
+            <button class="nav-btn" onclick="openTab(event, 'hobbies')"><i class="fas fa-running"></i> Activités</button>
+            <button class="nav-btn ppp-btn" onclick="openTab(event, 'ppp')"><i class="fas fa-briefcase"></i> Projet PPP</button>
+        </div>
     </nav>
 
-    <div class="container">
+    <main class="container">
         
-        <section id="about">
-            <h2>À propos de moi</h2>
-            <p>Bonjour ! Je suis passionné par la technologie et la création numérique. J'apprends actuellement à coder et voici mon premier portfolio en ligne.</p>
-        </section>
-
-        <section id="projects">
-            <h2>Mes Projets</h2>
+        <section id="welcome" class="tab-content active-tab">
+            <div class="section-header">
+               <h2>Bienvenue</h2>
+               <p>Mon parcours en un coup d'œil.</p>
+            </div>
             
-            <div class="project">
-                <h3>Projet 1 : Mon Portfolio</h3>
-                <p>Création d'un site web personnel responsive utilisant HTML et CSS hébergé sur GitHub.</p>
-            </div>
-
-            <div class="project">
-                <h3>Projet 2 : À venir</h3>
-                <p>Description de ton prochain projet ici (une calculatrice, un blog, etc.).</p>
+            <div class="card pitch-card">
+                <div class="video-placeholder">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/OVOH3lvufKY?si=0NfBv5RzWYK7JDsW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="card-content">
+                    <h3><i class="fas fa-quote-left accent-color"></i> À propos de moi</h3>
+                    <p>Étudiant en M1 à l'ENSEEIHT passionné par les sciences du numérique. Ce portfolio est le reflet de mes compétences techniques, de mes expériences internationales et de ma vision professionnelle.</p>
+                </div>
             </div>
         </section>
 
-        <section id="contact">
-            <h2>Me Contacter</h2>
-            <p>Tu peux me retrouver sur les réseaux ou m'envoyer un email.</p>
-            <a href="mailto:ton-email@exemple.com" class="btn">M'envoyer un email</a>
-            <br><br>
-            <p>Retrouvez-moi sur <a href="#">LinkedIn</a> ou <a href="#">GitHub</a>.</p>
+        <section id="engineering" class="tab-content">
+            <div class="section-header">
+                <h2>Formation & Technique</h2>
+            </div>
+            <div class="card-grid">
+                <div class="card tech-card">
+                    <div class="card-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3>Projet Majeur 1</h3>
+                    <p>Description concise du projet. Focus sur la réalisation technique et les résultats obtenus.</p>
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Machine Learning</span>
+                    </div>
+                </div>
+                <div class="card tech-card">
+                     <div class="card-icon"><i class="fas fa-network-wired"></i></div>
+                    <h3>Projet Technique 2</h3>
+                    <p>Description d'un second projet significatif ou d'un labo de recherche.</p>
+                    <div class="tags">
+                        <span class="tag">C++</span>
+                        <span class="tag">IoT</span>
+                    </div>
+                </div>
+            </div>
         </section>
 
-    </div>
+        <section id="mobility" class="tab-content">
+            <div class="section-header">
+                <h2>Mobilité Internationale</h2>
+            </div>
+            <div class="card-grid">
+                 <div class="card">
+                    <h3><i class="fas fa-map-marked-alt accent-color"></i> Ma Roadmap</h3>
+                    <p>Plan de validation des 18 semaines obligatoire à l'étranger.</p>
+                    <a href="#" class="btn btn-accent"><i class="fas fa-download"></i> Voir la Roadmap</a>
+                </div>
+                <div class="card">
+                    <h3><i class="fas fa-language accent-color"></i> Langues</h3>
+                    <ul class="no-bullets">
+                        <li><strong>Anglais :</strong> Niveau B2+ (TOEIC: XXX) <i class="fas fa-check-circle success-color"></i></li>
+                        <li><strong>Espagnol :</strong> Niveau A2 (En cours)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="civic" class="tab-content">
+            <div class="section-header">
+                 <h2>Engagement & RSE</h2>
+            </div>
+            <div class="card">
+                <div class="flex-row-center">
+                    <i class="fas fa-leaf fa-3x accent-color" style="margin-right: 20px;"></i>
+                    <div>
+                         <h3>Bilan Carbone Personnel</h3>
+                         <p class="large-text">Mon empreinte : <strong>4.5 Tonnes CO2e</strong></p>
+                         <p class="small-text">Objectif N7 : < 6 Tonnes.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                 <h3><i class="fas fa-hands-helping accent-color"></i> Engagement Citoyen</h3>
+                <p>Description de votre rôle dans une association, tutorat, ou action bénévole.</p>
+            </div>
+        </section>
+
+        <section id="hobbies" class="tab-content">
+             <div class="section-header">
+                 <h2>Sports & Soft Skills</h2>
+            </div>
+            <div class="card-grid">
+                <div class="card hobby-card bg-sport">
+                    <div class="content-overlay">
+                        <h3>Sport / Compétition</h3>
+                        <p>Votre discipline et les valeurs développées (résilience, esprit d'équipe).</p>
+                    </div>
+                </div>
+                <div class="card hobby-card bg-culture">
+                     <div class="content-overlay">
+                        <h3>Arts & Culture</h3>
+                        <p>Musique, dessin, voyages ou autres passions créatives.</p>
+                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ppp" class="tab-content">
+             <div class="section-header">
+                 <h2>Dossier Professionnel (PPP)</h2>
+                 <p>Documents clés pour ma validation.</p>
+            </div>
+            
+            <div class="card ppp-highlight">
+                <h3><i class="far fa-file-alt"></i> Candidature</h3>
+                <p>Outils pour ma recherche de stage/emploi.</p>
+                <div class="btn-group">
+                    <a href="cv-fr.pdf" class="btn btn-accent">CV Français</a>
+                    <a href="cv-en.pdf" class="btn btn-outline">English CV</a>
+                    <a href="lettre.pdf" class="btn btn-outline">Lettre de Motiv.</a>
+                </div>
+            </div>
+
+            <div class="card">
+                 <h3><i class="fas fa-university"></i> Livrables Académiques</h3>
+                <div class="btn-group">
+                    <a href="rapport.pdf" class="btn btn-dark"><i class="fas fa-file-pdf"></i> Rapport de Stage</a>
+                    <a href="slides.pdf" class="btn btn-dark"><i class="fas fa-desktop"></i> Slides Oral (Janvier)</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
 
     <footer>
-        <p>&copy; 2025 Ton Prénom Nom. Hébergé sur GitHub Pages.</p>
+        <p>© 2025 Thomas Niellen <span style="margin: 0 10px;">|</span> <a href="#" style="color: var(--accent-color); text-decoration: none;"><i class="fab fa-linkedin"></i> LinkedIn</a></p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>

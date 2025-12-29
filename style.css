@@ -1,0 +1,319 @@
+/* --- style.css --- */
+
+/* 1. Variables et Reset */
+:root {
+    /* Palette de couleurs moderne */
+    --primary-dark: #0f172a;   /* Bleu nuit très sombre */
+    --primary-light: #1e293b;  /* Bleu nuit un peu plus clair */
+    --accent-color: #f97316;   /* Orange vif pour le dynamisme */
+    --accent-hover: #ea580c;   /* Orange plus foncé au survol */
+    --text-dark: #334155;      /* Gris foncé pour le texte */
+    --text-light: #94a3b8;     /* Gris clair pour les sous-titres */
+    --bg-body: #f1f5f9;        /* Fond de page très clair */
+    --card-bg: #ffffff;        /* Fond des cartes */
+    --success: #10b981;        /* Vert pour les validations */
+    
+    /* Ombres douces */
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+}
+
+body {
+    font-family: 'Open Sans', sans-serif; /* Police pour le corps du texte */
+    background-color: var(--bg-body);
+    /* Motif de fond subtil et moderne */
+    background-image: radial-gradient(var(--text-light) 1px, transparent 1px);
+    background-size: 20px 20px;
+    margin: 0;
+    color: var(--text-dark);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+h1, h2, h3, .nav-btn {
+    font-family: 'Poppins', sans-serif; /* Police pour les titres */
+    font-weight: 700;
+}
+
+/* 2. Header Créatif */
+header {
+    position: relative;
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-light));
+    color: white;
+    padding: 4rem 0 3rem; /* Plus d'espace */
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Ajout d'une forme vague en bas du header pour casser la ligne droite */
+header::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: var(--bg-body);
+    clip-path: polygon(0 50%, 100% 0, 100% 100%, 0% 100%);
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3rem;
+    letter-spacing: -1px;
+}
+
+.dot { color: var(--accent-color); } /* Le point orange après le nom */
+
+header p {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+/* 3. Navigation "Flottante" */
+nav {
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 10px; /* Légèrement décollé du haut */
+    z-index: 100;
+    padding: 0 20px;
+}
+
+.nav-container {
+    background: rgba(255, 255, 255, 0.95); /* Fond semi-transparent */
+    backdrop-filter: blur(10px); /* Effet de flou derrière le menu */
+    padding: 5px;
+    border-radius: 50px; /* Menu en forme de pilule */
+    box-shadow: var(--shadow-md);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    border-radius: 30px; /* Boutons ronds */
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-btn i { font-size: 1.1rem; } /* Taille des icônes du menu */
+
+.nav-btn:hover {
+    background-color: rgba(249, 115, 22, 0.1); /* Orange très pâle au survol */
+    color: var(--accent-color);
+}
+
+.nav-btn.active {
+    background-color: var(--accent-color);
+    color: white;
+    box-shadow: var(--shadow-sm);
+}
+
+/* Le bouton PPP est spécial */
+.ppp-btn.active {
+    background-color: var(--primary-dark);
+}
+
+/* 4. Contenu Principal et Animations */
+.container {
+    max-width: 1000px;
+    margin: 3rem auto;
+    padding: 0 25px;
+    flex: 1;
+}
+
+.tab-content {
+    display: none;
+    /* Animation d'entrée plus fluide */
+    animation: slideUpFade 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.tab-content.active-tab { display: block; }
+
+@keyframes slideUpFade {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+.section-header h2 {
+    font-size: 2rem;
+    color: var(--primary-dark);
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    position: relative;
+}
+/* Petit soulignement créatif sous les titres */
+.section-header h2::after {
+    content: '';
+    display: block;
+    width: 60%;
+    height: 4px;
+    background: var(--accent-color);
+    margin: 8px auto 0;
+    border-radius: 2px;
+}
+.section-header p { color: var(--text-light); }
+
+/* 5. Cartes Créatives */
+.card {
+    background: var(--card-bg);
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 16px; /* Coins très arrondis */
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(255,255,255,0.5); /* Bordure subtile */
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* La carte remonte au survol */
+    box-shadow: var(--shadow-lg);
+}
+
+.card h3 {
+    color: var(--primary-dark);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.3rem;
+}
+
+.accent-color { color: var(--accent-color); }
+.success-color { color: var(--success); }
+
+/* Grilles pour aligner les cartes */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+/* Style spécifique pour les cartes techniques */
+.tech-card { border-top: 4px solid var(--accent-color); }
+.card-icon {
+    width: 50px; height: 50px;
+    background: rgba(249, 115, 22, 0.1);
+    color: var(--accent-color);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+/* Style pour la carte PPP mise en avant */
+.ppp-highlight {
+    background: linear-gradient(135deg, #fff, #fff5eb); /* Léger dégradé orange */
+    border-left: none;
+    border: 2px solid var(--accent-color);
+}
+
+/* 6. Boutons Modernes */
+.btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.2s;
+    border: none; cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn-accent {
+    background: var(--accent-color); color: white;
+    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+}
+.btn-accent:hover { background: var(--accent-hover); transform: translateY(-2px); }
+
+.btn-outline {
+    background: transparent; color: var(--text-dark);
+    border: 2px solid #e2e8f0;
+}
+.btn-outline:hover { border-color: var(--accent-color); color: var(--accent-color); }
+
+.btn-dark { background: var(--primary-dark); color: white; }
+.btn-dark:hover { background: var(--primary-light); }
+
+.btn-group { display: flex; gap: 15px; flex-wrap: wrap; margin-top: 20px; }
+
+/* 7. Éléments Spécifiques */
+.video-placeholder {
+    background: linear-gradient(45deg, var(--primary-dark), var(--primary-light));
+    color: white; height: 320px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    border-radius: 12px; margin-bottom: 25px;
+    position: relative; overflow: hidden;
+}
+.video-placeholder::before {
+    content: ''; position: absolute; top:0; left:0; width:100%; height:100%;
+    background: url('https://www.transparenttextures.com/patterns/cubes.png'); /* Motif subtil */
+    opacity: 0.1;
+}
+.play-icon { color: var(--accent-color); margin-bottom: 15px; transition: transform 0.3s;}
+.video-placeholder:hover .play-icon { transform: scale(1.1); }
+
+.tags { margin-top: 15px; display: flex; flex-wrap: wrap; gap: 8px; }
+.tag {
+    background: #e2e8f0; color: var(--text-dark);
+    padding: 6px 12px; border-radius: 20px;
+    font-size: 0.85rem; font-weight: 600;
+}
+
+.no-bullets { list-style: none; padding: 0; }
+.no-bullets li { margin-bottom: 10px; display: flex; align-items: center; gap: 10px;}
+
+.flex-row-center { display: flex; align-items: center; }
+.large-text { font-size: 1.4rem; margin: 5px 0; }
+
+/* Cartes Hobbies avec fond image (à remplacer par vos images) */
+.hobby-card { color: white; height: 200px; display: flex; align-items: flex-end; padding: 0; }
+.bg-sport { background: url('https://source.unsplash.com/random/800x600/?sport') center/cover; }
+.bg-culture { background: url('https://source.unsplash.com/random/800x600/?art') center/cover; }
+.content-overlay {
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    width: 100%; padding: 20px; border-radius: 0 0 16px 16px;
+}
+.hobby-card h3 { color: white; margin-bottom: 5px; }
+
+/* Footer */
+footer {
+    background: var(--primary-dark); color: var(--text-light);
+    text-align: center; padding: 30px; margin-top: auto;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    header h1 { font-size: 2.2rem; }
+    .nav-container { border-radius: 16px; padding: 10px; }
+    .nav-btn { flex: 1 1 45%; justify-content: center; font-size: 0.8rem; padding: 10px; }
+    .nav-btn i { display: none; /* On cache les icônes sur petit écran pour gagner de la place */ }
+    .card { padding: 20px; }
+    .btn { width: 100%; justify-content: center; }
+}
