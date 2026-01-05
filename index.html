@@ -40,20 +40,54 @@
                <p>Mon parcours en un coup d'œil.</p>
             </div>
             
+            <div class="card">
+                <div style="display: flex; align-items: center; gap: 40px; flex-wrap: wrap;">
+                    
+                    <div style="flex: 0 0 auto; margin: 0 auto;">
+                       <img src="photo.png" alt="Thomas Niellen" 
+                            style="width: 220px; height: 220px; border-radius: 50%; object-fit: cover; object-position: center 16%; border: 4px solid var(--accent-color); box-shadow: var(--shadow-md);">
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 300px;">
+                        <h3><i class="fas fa-user-graduate accent-color"></i> Recherche de Stage (Juin-Août)</h3>
+                        
+                        <p style="font-size: 1.1rem; line-height: 1.6; margin-top: 15px; color: var(--text-dark);">
+                            Élève-ingénieur en Informatique & Réseaux à l'<strong>ENSEEIHT</strong>, je suis à la recherche d'un <strong>stage technique de 8 semaines</strong>.
+                        </p>
+                        
+                        <p style="font-size: 1.1rem; line-height: 1.6; margin-top: 10px; color: var(--text-dark);">
+                            Ayant acquis des bases solides en <strong>protocoles et architectures réseaux</strong>, je souhaite mettre en pratique mes connaissances et ma rigueur au sein de votre équipe opérationnelle.
+                        </p>
+
+                        <div class="btn-group" style="margin-top: 25px;">
+                            <button class="btn btn-accent" onclick="openTab(event, 'ppp')">
+                                <i class="fas fa-file-alt"></i> Voir mon CV
+                            </button>
+                            <a href="https://www.linkedin.com/in/thomas-niellen" target="_blank" class="btn btn-outline">
+                                <i class="fab fa-linkedin"></i> LinkedIn
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
             <div class="card pitch-card">
                 <div class="video-placeholder">
-                <iframe 
-                src="https://www.youtube.com/embed/OVOH3lvufKY?si=0NfBv5RzWYK7JDsW" 
-                title="YouTube video player" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                referrerpolicy="strict-origin-when-cross-origin" 
-                allowfullscreen></iframe>
+                    <iframe 
+                    src="https://www.youtube.com/embed/OVOH3lvufKY?si=0NfBv5RzWYK7JDsW" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen></iframe>
+                </div>
                 <div class="card-content">
                     <h3><i class="fas fa-quote-left accent-color"></i> À propos de moi</h3>
                     <p>Étudiant en M1 à l'ENSEEIHT passionné par les sciences du numérique. Ce portfolio est le reflet de mes compétences techniques, de mes expériences internationales et de ma vision professionnelle.</p>
                 </div>
             </div>
+            
         </section>
 
         <section id="engineering" class="tab-content">
@@ -113,46 +147,87 @@
             <div class="section-header">
                  <h2>Engagement & RSE</h2>
             </div>
-            <div class="card">
-                <div class="flex-row-center">
-                    <i class="fas fa-leaf fa-3x accent-color" style="margin-right: 20px;"></i>
-                    <div>
-                         <h3>Bilan Carbone Personnel</h3>
-                         <p class="large-text">Mon empreinte : <strong>4.5 Tonnes CO2e</strong></p>
-                         <p class="small-text">Objectif N7 : < 6 Tonnes.</p>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <div class="flex-row-center">
+                        <i class="fas fa-train fa-3x accent-color" style="margin-right: 20px;"></i>
+                        <div>
+                             <h3>Mobilité Responsable</h3>
+                             <p class="large-text">Départ en Allemagne : <strong>100% Train</strong></p>
+                             <p class="small-text" style="margin-top: 5px;">
+                                <i class="fas fa-check-circle success-color"></i>
+                                Choix conforme au <strong>quota carbone mobilité</strong> de l'N7.
+                             </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="card">
-                 <h3><i class="fas fa-hands-helping accent-color"></i> Engagement Citoyen</h3>
-                <p>Description de votre rôle dans une association, tutorat, ou action bénévole.</p>
+
+                <div class="card">
+                     <h3><i class="fas fa-users accent-color"></i> Vie Associative</h3>
+                     <ul class="no-bullets">
+                        <li style="align-items: flex-start;">
+                            <i class="fas fa-wine-glass-alt accent-color" style="margin-top: 5px; width: 25px;"></i>
+                            <div>
+                                <strong>Président - 7emilion</strong>
+                                <br><span class="small-text">Club d'Œnologie : Leadership, gestion de budget et organisation d'événements.</span>
+                            </div>
+                        </li>
+                        
+                        <li style="align-items: flex-start; margin-top: 15px;">
+                            <i class="fas fa-pen-fancy accent-color" style="margin-top: 5px; width: 25px;"></i>
+                            <div>
+                                <strong>Secrétaire - Genius N7</strong>
+                                <br><span class="small-text">Gestion administrative, rédaction des comptes-rendus et coordination interne.</span>
+                            </div>
+                        </li>
+                     </ul>
+                </div>
             </div>
         </section>
 
         <section id="hobbies" class="tab-content">
              <div class="section-header">
-                 <h2>Sports & Soft Skills</h2>
+                 <h2>Passions & Compétitions</h2>
             </div>
             <div class="card-grid">
+                
                 <div class="card hobby-card bg-sport">
                     <div class="content-overlay">
-                        <h3>Sport / Compétition</h3>
-                        <p>Votre discipline et les valeurs développées (résilience, esprit d'équipe).</p>
+                        <h3><i class="fas fa-running accent-color"></i> Sports & Résilience</h3>
+                        <div style="margin-top: 15px;">
+                            <p style="margin-bottom: 8px;">
+                                <i class="fas fa-medal accent-color" style="margin-right: 8px;"></i>
+                                <strong>Triathlon / Aquathlon :</strong> Pratique depuis l'âge de 9 ans. Participation aux <strong>Championnats de France</strong>.
+                            </p>
+                            <p>
+                                <i class="fas fa-dumbbell accent-color" style="margin-right: 8px;"></i>
+                                <strong>Street Workout :</strong> Pratique actuelle en autodidacte (Discipline & Autonomie).
+                            </p>
+                        </div>
                     </div>
                 </div>
+
                 <div class="card hobby-card bg-culture">
                      <div class="content-overlay">
-                        <h3>Arts & Culture</h3>
-                        <p>Musique, dessin, voyages ou autres passions créatives.</p>
+                        <h3><i class="fas fa-chess-knight accent-color"></i> Stratégie (Échecs)</h3>
+                        <p>Membre du <strong>Club d'Échecs de Calais</strong> depuis 9 ans.</p>
+                        <p style="margin-top: 10px;">
+                            <i class="fas fa-chart-line accent-color" style="margin-right: 8px;"></i>
+                            Classement actuel : <strong>1100 Elo</strong>.
+                        </p>
+                        <p class="small-text" style="margin-top: 5px; opacity: 0.9;">
+                            Développement de l'anticipation et de la prise de décision sous pression.
+                        </p>
                      </div>
                 </div>
+
             </div>
         </section>
 
         <section id="ppp" class="tab-content">
              <div class="section-header">
                  <h2>Dossier Professionnel (PPP)</h2>
-                 <p>Documents clés pour ma validation.</p>
             </div>
             
             <div class="card ppp-highlight">
@@ -177,7 +252,7 @@
     </main>
 
     <footer>
-        <p>© 2025 Thomas Niellen <span style="margin: 0 10px;">|</span> <a href="#" style="color: var(--accent-color); text-decoration: none;"><i class="fab fa-linkedin"></i> LinkedIn</a></p>
+        <p>© 2025 Thomas Niellen <span style="margin: 0 10px;">|</span> <a href="https://www.linkedin.com/in/thomas-niellen" target="_blank" style="color: var(--accent-color); text-decoration: none;"><i class="fab fa-linkedin"></i> LinkedIn</a></p>
     </footer>
 
     <script src="script.js"></script>

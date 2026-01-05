@@ -305,7 +305,18 @@ nav {
 .large-text { font-size: 1.4rem; margin: 5px 0; }
 
 /* Cartes Hobbies avec fond image (à remplacer par vos images) */
-.hobby-card { color: white; height: 200px; display: flex; align-items: flex-end; padding: 0; }
+.hobby-card { 
+    color: white; 
+    height: 250px; /* Un peu plus haut pour l'aération */
+    display: flex; 
+    align-items: flex-end; 
+    padding: 0; 
+    overflow: hidden; /* Important pour que l'image ne dépasse pas */
+    position: relative;
+    /* Assure que l'image est bien centrée */
+    background-position: center center;
+    background-size: cover; 
+}
 .bg-sport { background: url('https://source.unsplash.com/random/800x600/?sport') center/cover; }
 .bg-culture { background: url('https://source.unsplash.com/random/800x600/?art') center/cover; }
 .content-overlay {
